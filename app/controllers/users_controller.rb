@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     # different for plant_sitters and customers
     # we need to install devise, so we can use
     # "current_user.plant_sitter == true" condition
-    # until logging is implemented, we are using User.all
+    # until logging in is implemented, we are using User.all
     @users = User.all
   end
 
