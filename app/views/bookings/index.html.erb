@@ -1,0 +1,8 @@
+<h1> My Plant-Sitting Requests:</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li> Start date: <%=booking.start_date%> End date: <%=booking.end_date%> Status: <%=booking.status%> </li>
+  <% end %>
+</ul>
+
