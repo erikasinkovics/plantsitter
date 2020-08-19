@@ -18,7 +18,7 @@ puts "Creating customers..."
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     postal_code: "H2H",
-    password: Faker::Internet.password,
+    password: "password",
     bio: Faker::Games::LeagueOfLegends.quote,
     plant_sitter: false,
   }
@@ -33,7 +33,7 @@ puts "Creating plant sitters..."
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     postal_code: "H2H",
-    password: Faker::Internet.password,
+    password: "password",
     bio: Faker::Games::LeagueOfLegends.quote,
     plant_sitter: true,
     pick_up: true,

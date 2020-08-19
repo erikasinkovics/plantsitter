@@ -1,0 +1,7 @@
+<h1>Confirm booking details</h1>
+
+<%= simple_form_for(@booking) do |t| %>
+  <%= t.input :start_date, as: :date %>
+  <%= t.input :end_date, as: :date %>
+  <%= t.button :submit %>
+<% end %>
