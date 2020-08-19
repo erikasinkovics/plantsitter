@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+// Global Style (global style commands for entire app)
+
+h1 {
+font-family: 'Abril Fatface', cursive;
+}
