@@ -1,0 +1,10 @@
+<p><strong>First name: </strong><%= @user.first_name %></p>
+<p><strong>Last name: </strong><%= @user.last_name %></p>
+<p><strong>E-mail: </strong><%= @user.email %></p>
+<p><strong>Postal code: </strong><%= @user.postal_code %></p>
+<p><strong>Bio: </strong><%= @user.bio %></p>
+<p><strong>Plant sitter: </strong><%= @user.plant_sitter %></p>
+<p><strong>Does pick-up: </strong><%= @user.pick_up %></p>
+<p><strong>Price: </strong><%= @user.price %></p>
+<p><%= link_to "Book me!",  new_user_booking_path(@user.id) %></p>
+
