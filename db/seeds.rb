@@ -25,6 +25,16 @@ puts "Creating customers..."
   User.create!(attributes)
 }
 
+User.create!({
+    first_name: "Karine",
+    last_name: Faker::Name.last_name,
+    email: "karine@gmail.com",
+    postal_code: "H2H",
+    password: "password",
+    bio: "Hi! I'm Karine. I'm a 28 years old plant enthusiast from Montreal, proud plant-mom of 15.",
+    plant_sitter: false,
+  })
+
 puts "Creating plant sitters..."
 
 5.times {
