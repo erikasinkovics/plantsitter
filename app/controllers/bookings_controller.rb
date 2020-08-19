@@ -15,14 +15,21 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @bookings.each do |booking|
+      booking.status = true
+    end
   end
 
   def show
     @booking = Booking.find(params[:id])
+    if @booking.status = true
+      @booking.status = "Accepted"
+    end
   end
 
   def edit
     @booking = Booking.find(params[:id])
+
   end
 
   def update

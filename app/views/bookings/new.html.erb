@@ -1,7 +1,11 @@
 <h1>Confirm booking details</h1>
 
+<p>Your plantsitter is (insert name here) </p>
+
 <%= simple_form_for(@booking) do |t| %>
   <%= t.input :start_date, as: :date %>
   <%= t.input :end_date, as: :date %>
   <%= t.button :submit %>
 <% end %>
+
+<a href="/bookings">Go back to bookings</a>
