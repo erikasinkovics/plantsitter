@@ -6,3 +6,5 @@
 <p><strong>Plant sitter: </strong><%= @user.plant_sitter %></p>
 <p><strong>Does pick-up: </strong><%= @user.pick_up %></p>
 <p><strong>Price: </strong><%= @user.price %></p>
+<p><%= link_to "Book me!",  new_user_booking_path(@user.id) %></p>
+
