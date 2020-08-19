@@ -1,11 +1,14 @@
 class BookingsController < ApplicationController
 
   def new
+    @plant_sitter = User.find(params[:user_id])
     @booking = Booking.new
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.plant_sitter = User.find(params[:user_id])
+    @booking.customer = current_user
     if @booking.save
       redirect_to booking_path(@booking)
     else
