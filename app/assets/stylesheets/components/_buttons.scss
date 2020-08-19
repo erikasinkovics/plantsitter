@@ -1,23 +1,27 @@
 .btn-medium-gold {
   color: white;
   border: 5px solid white;
-  padding: 32px;
+  padding: 40px;
   border-radius: 10px;
   font-weight: lighter;
   font-size: 32px;
   opacity: 0.9;
+  // justify-content: space-between;
   // margin: 0 auto;
   // display: inline-block;
   // text-align: center;
 }
 
-.btn-medium-gold:hover {
-  // opacity: 0.1;
-  border-color: #FFD700;
+.btn-medium-gold:hover,.btn-medium-gold:active {
+  opacity: 1;
+
   text-decoration: none;
-  // color: #FFD700;
-  // background: #FFD700;
-  color: white;
+  color: #FFD700;
+  border: 5px solid #FFD700;
 }
 
 
+
+// a:hover {
+//   text-decoration: underline;
+// }
