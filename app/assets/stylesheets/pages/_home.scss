@@ -1,1 +1,42 @@
-// Specific CSS for your home-page
+// Specific CSS for the home-page
+// class is more specific than tag and will override a tag
+
+body {
+  background-image: asset-url('monstera.jpeg');
+  // background-filter: #00280D;
+  // opacity: 0.5;
+}
+
+// .card {
+
+// }
+
+
+// .btn-medium {
+//   color: #FCFCFF;
+//   border: 3px solid;
+//   padding: 24px 24px;
+//   border-radius: 50px;
+//   font-weight: lighter;
+//   text-align: center;
+//   background-color: transparent;
+//   outline: none;
+//   // opacity: 0.6;
+
+// }
+
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 16px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+
+.btn-medium:hover {
+  opacity: 0.5;
+  text-decoration: none;
+  color: #FFD700;
+}
+

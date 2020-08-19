@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create, :index, :show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   end
+  get '/uikit', to: 'pages#design'
 end
