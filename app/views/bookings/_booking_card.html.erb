@@ -1,17 +1,17 @@
-
-  <div class="card-product">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-    <div class="card-product-infos">
-      <div>
-        <h2><%= link_to booking.customer.first_name,booking_path(booking)  %></h2>
-        <p> <%= booking.start_date %> to <%= booking.end_date %></p>
-        <p> <%= booking.status %> </p>
-      </div>
-      <%= simple_form_for booking do |f| %>
-        <%= f.input :status, :collection => [['true'], ['false']], label: 'Accept Booking?', value: 'true'%>
-        <%= f.submit %>
-      <% end %>
+<!-- BOOKING CARD -->
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <div>
+      <h2><%= link_to booking.customer.first_name,booking_path(booking)  %></h2>
+      <p> <%= booking.start_date %> to <%= booking.end_date %></p>
+      <p> <%= booking.status %> </p>
     </div>
+    <%= simple_form_for booking do |f| %>
+      <%= f.input :status, :collection => [['true'], ['false']], label: 'Accept Booking?', value: 'true'%>
+      <%= f.submit %>
+    <% end %>
   </div>
+</div>
 
 <!-- will need to have a label for accept or decline in the drop down menu -->
