@@ -3,8 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+# Cloudinary & Environment
+gem 'cloudinary', '~> 1.12.0'
+
 # Devise
 gem 'devise'
+
+# Dotenv gem for security (keys for image upload)
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Faker gem for the seed
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
@@ -66,3 +72,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# font awesome gem
+gem 'font-awesome-sass'
