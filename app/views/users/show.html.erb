@@ -1,3 +1,5 @@
+<%= cl_image_tag(@user.photo.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
 <p><strong>First name: </strong><%= @user.first_name %></p>
 <p><strong>Last name: </strong><%= @user.last_name %></p>
 <p><strong>E-mail: </strong><%= @user.email %></p>

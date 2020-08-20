@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+# Cloudinary & Environment
+gem 'cloudinary', '~> 1.12.0'
+
 # Devise
 gem 'devise'
 
