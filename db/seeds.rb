@@ -68,7 +68,7 @@ User.create!({
 
 puts "User persona (Karine) created!"
 
-karine = User.all.first
+karine = User.all.last
 karine.photo.attach(io: file, filename: 'karine.png', content_type: 'image/png')
 
 puts "Profile picture attached!"
