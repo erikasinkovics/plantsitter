@@ -1,6 +1,18 @@
+
+<%= cl_image_tag(User.all[@booking.plant_sitter_id].photo.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
 <p> Booking start date: <%= @booking.start_date %></p>
 <p> Booking end date: <%= @booking.end_date %></p>
-<p> Customer: <%= @booking.customer_id %></p>
-<p> Plant Sitter: <%= @booking.plant_sitter_id %></p>
-<p> Status: <%= @booking.status %></p>
-<a href="/users">Go back to Plantsitters</a>
+<p> Customer: <%= "#{User.all[@booking.customer_id].first_name} #{User.all[@booking.customer_id].last_name}" %></p>
+<p> Plant Sitter: <%= "#{User.all[@booking.plant_sitter_id].first_name} #{User.all[@booking.plant_sitter_id].last_name}" %></p>
+
+<% if @booking.status == true %>
+  <p>Approved</p>
+<% elsif @booking.status == false %>
+  <p>Rejected</p>
+<% else %>
+  <p>Pending</p>
+<% end %>
+
+<p><%= link_to "Go back to Plantsitters", users_path %></p>
