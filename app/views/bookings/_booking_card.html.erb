@@ -1,0 +1,14 @@
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <div>
+      <h2><%= booking.customer.first_name %></h2>
+      <p> <%= booking.start_date %></p>
+    </div>
+    <%= simple_form_for booking do |f| %>
+      <%= f.input :status, :collection => [['true'], ['false']], label: 'Accept Booking?', value: 'true'%>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+<!-- will need to have a label for accept or decline in the drop down menu -->
