@@ -4,7 +4,7 @@
 
 <ul>
   <% @bookings.each do |booking| %>
-    <li>  <%= link_to 'test', booking_path(booking) %> Start date: <%=booking.start_date%> End date: <%=booking.end_date%> Status: <%=booking.status%> </li>
+    <li>  <%= link_to 'Booking', booking_path(booking) %> Start date: <%=booking.start_date%> End date: <%=booking.end_date%> Status: <%=booking.status%> </li>
   <% end %>
 </ul>
 
