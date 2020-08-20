@@ -6,6 +6,9 @@ ruby '2.6.6'
 # Devise
 gem 'devise'
 
+# Dotenv gem for security (keys for image upload)
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Faker gem for the seed
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
