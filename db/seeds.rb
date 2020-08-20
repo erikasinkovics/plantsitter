@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+require 'open-uri'
 
 puts "Cleaning database..."
 User.destroy_all
@@ -27,16 +28,6 @@ postal_codes = ["H2H 1A1", "H2H 1A2", "H2H 1A3", "H2H 1A4", "H2H 1A5", "H2H 1A6"
   User.create!(attributes)
 }
 
-User.create!({
-    first_name: "Karine",
-    last_name: Faker::Name.last_name,
-    email: "karine@gmail.com",
-    postal_code: "H2H 1C1",
-    password: "password",
-    bio: "Hi! I'm Karine. I'm a 28 years old plant enthusiast from Montreal, proud plant-mom of 15.",
-    plant_sitter: false,
-  })
-
 puts "Creating plant sitters..."
 
 5.times {
@@ -53,6 +44,34 @@ puts "Creating plant sitters..."
   }
   User.create!(attributes)
 }
+
+puts "Attaching profile pictures..."
+
+User.all.each { |user|
+  random_portrait = URI.open('https://picsum.photos/500')
+  user.photo.attach(io: random_portrait, filename: "#{user.first_name}#{user.last_name}.png", content_type: 'image/png')
+}
+
+puts "Creating user persona..."
+
+file = URI.open('https://images.unsplash.com/photo-1542103749-8ef59b94f47e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80')
+
+User.create!({
+    first_name: "Karine",
+    last_name: Faker::Name.last_name,
+    email: "karine@gmail.com",
+    postal_code: "H2H 1C1",
+    password: "password",
+    bio: "Hi! I'm Karine. I'm a 28 years old plant enthusiast from Montreal, proud plant-mom of 15.",
+    plant_sitter: false,
+  })
+
+puts "User persona (Karine) created!"
+
+karine = User.all.first
+karine.photo.attach(io: file, filename: 'karine.png', content_type: 'image/png')
+
+puts "Profile picture attached!"
 
 puts "Creating bookings..."
 
