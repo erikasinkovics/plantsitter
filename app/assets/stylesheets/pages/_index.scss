@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+
+body {
+  background-image: asset-url('monstera.jpeg');
+  // background-filter: #00280D;
+}
