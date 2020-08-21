@@ -12,6 +12,7 @@
     <p><strong><%= @user.pick_up ? "#{@user.first_name} can do pick-up!" : "#{@user.first_name} doesn't offer pick-up" %></strong></p>
     <p><strong>Price: </strong>$<%= @user.price %></p>
     <p><%= link_to "Book me!",  new_user_booking_path(@user.id) %></p>
+    <p><%= link_to "List of PlantSitters",  users_path %></p>
   </div>
 
 </div>
