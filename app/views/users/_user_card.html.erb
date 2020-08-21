@@ -7,7 +7,7 @@
   <div class="user_card_info">
     <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
     <p><%= user.postal_code %></p>
-    <p><%= user.price %></p>
+    <p>$<%= user.price %></p>
     <div>
       <%= link_to "learn more", user_path(user), class: "btn-purple" %>
     </div>
