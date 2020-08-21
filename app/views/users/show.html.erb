@@ -1,10 +1,17 @@
-<%= cl_image_tag(@user.photo.key,
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
-<p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-<p><strong>E-mail: </strong><%= @user.email %></p>
-<p><strong>Postal code: </strong><%= @user.postal_code %></p>
-<p><strong>Bio: </strong><%= @user.bio %></p>
-<p><strong><%= @user.pick_up ? "#{@user.first_name} can do pick-up!" : "#{@user.first_name} doesn't offer pick-up" %></strong></p>
-<p><strong>Price: </strong>CAD <%= @user.price %></p>
-<p><%= link_to "Book me!",  new_user_booking_path(@user.id) %></p>
 
+
+<div class="user-show-card">
+  <%= cl_image_tag(@user.photo.key,
+      width: 150, height: 150, crop: :thumb, gravity: :face) %>
+
+  <div class="info-box">
+    <p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+    <p><strong>E-mail: </strong><%= @user.email %></p>
+    <p><strong>Postal code: </strong><%= @user.postal_code %></p>
+    <p><strong>Bio: </strong><%= @user.bio %></p>
+    <p><strong><%= @user.pick_up ? "#{@user.first_name} can do pick-up!" : "#{@user.first_name} doesn't offer pick-up" %></strong></p>
+    <p><strong>Price: </strong>$<%= @user.price %></p>
+    <p><%= link_to "Book me!",  new_user_booking_path(@user.id) %></p>
+  </div>
+
+</div>
