@@ -1,18 +1,23 @@
+<h1> Booking Confirmation</h1>
 
-<%= cl_image_tag(User.find(@booking.plant_sitter_id).photo.key,
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
-<p>Booking start date: <%= @booking.start_date %></p>
-<p>Booking end date: <%= @booking.end_date %></p>
-<p>Customer: <%= "#{User.find(@booking.customer_id).first_name} #{User.find(@booking.customer_id).last_name}" %></p>
-<p>Plant Sitter: <%= "#{User.find(@booking.plant_sitter_id).first_name} #{User.find(@booking.plant_sitter_id).last_name}" %></p>
-<p>Price: $<%=User.find(@booking.plant_sitter_id).price %></p>
+<div class="user-show-card">
+    <br>
+      <p>Thank you for booking with PlantSitter, <%= "#{User.find(@booking.customer_id).first_name}"%>! Below are your booking details:</p>
+      <p> <strong>Plant Sitter:</strong>  <%= "#{User.find(@booking.plant_sitter_id).first_name} #{User.find(@booking.plant_sitter_id).last_name}" %></p>
+      <p> <strong> Booking start date:</strong> <%= @booking.start_date %></p>
+      <p> <strong>Booking end date:</strong> <%= @booking.end_date %></p>
+      <p> <strong>Price:</strong> $<%=User.find(@booking.plant_sitter_id).price %> per day</p>
 
-<% if @booking.status == true %>
-  <p>Approved</p>
-<% elsif @booking.status == false %>
-  <p>Rejected</p>
-<% else %>
-  <p>Pending</p>
-<% end %>
-
-<p><%= link_to "Go back to Bookings", bookings_path %></p>
+    <% if @booking.status == true %>
+      <p>Booking status: Approved</p>
+    <% elsif @booking.status == false %>
+      <p>Booking status: Rejected</p>
+    <% else %>
+      <p><strong>  Booking status:</strong>  <strong> <em> Pending.</em></strong> Once the booking is approved by your plant sitter, you will recieve a notification by email!</p>
+    <% end %>
+    <br>
+    <div>
+      <%= link_to "Go back to my bookings", bookings_path, class: "btn-purple" %>
+    </div>
+    <br>
+</div>
