@@ -31,4 +31,12 @@ a {
 
 }
 
+.home-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  justify-content: space-between;
+  padding: 20px;
+}
+
 
