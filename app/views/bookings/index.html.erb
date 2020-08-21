@@ -1,10 +1,14 @@
-<h1> My Plant-Sitting Requests:</h1>
+<h1> My Plant-Sitting Requests</h1>
 
-<h2>Here are my booking requests:</h2>
-
-<div class="container">
-  <% @bookings.each do |booking| %>
-    <%= render 'booking_card', {booking: booking} %>
+<div class="card-container">
+  <% if current_user.plant_sitter == true %>
+    <% @bookings.where(plant_sitter_id: current_user.id).each do |booking| %>
+      <%= render 'booking_card', {booking: booking} %>
+    <% end %>
+  <% else %>
+    <% @bookings.where(customer_id: current_user.id).each do |booking| %>
+      <%= render 'booking_card', {booking: booking} %>
+    <% end %>
   <% end %>
 </div>
 

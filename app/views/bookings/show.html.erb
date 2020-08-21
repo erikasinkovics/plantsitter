@@ -1,11 +1,11 @@
 
-<%= cl_image_tag(User.all[@booking.plant_sitter_id].photo.key,
+<%= cl_image_tag(User.find(@booking.plant_sitter_id).photo.key,
       width: 150, height: 150, crop: :thumb, gravity: :face) %>
-
-<p> Booking start date: <%= @booking.start_date %></p>
-<p> Booking end date: <%= @booking.end_date %></p>
-<p> Customer: <%= "#{User.all[@booking.customer_id].first_name} #{User.all[@booking.customer_id].last_name}" %></p>
-<p> Plant Sitter: <%= "#{User.all[@booking.plant_sitter_id].first_name} #{User.all[@booking.plant_sitter_id].last_name}" %></p>
+<p>Booking start date: <%= @booking.start_date %></p>
+<p>Booking end date: <%= @booking.end_date %></p>
+<p>Customer: <%= "#{User.find(@booking.customer_id).first_name} #{User.find(@booking.customer_id).last_name}" %></p>
+<p>Plant Sitter: <%= "#{User.find(@booking.plant_sitter_id).first_name} #{User.find(@booking.plant_sitter_id).last_name}" %></p>
+<p>Price: $<%=User.find(@booking.plant_sitter_id).price %></p>
 
 <% if @booking.status == true %>
   <p>Approved</p>
@@ -15,4 +15,4 @@
   <p>Pending</p>
 <% end %>
 
-<p><%= link_to "Go back to Plantsitters", bookings_path %></p>
+<p><%= link_to "Go back to Bookings", bookings_path %></p>
