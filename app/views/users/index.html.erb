@@ -1,36 +1,15 @@
 
-
-
 <section class="section">
   <div style="background: url(<%= asset_path "fern.jpeg" %>)">
-
-
-  <div class="container">
-    <!-- <h1>Plant Sitters in your area</h1> -->
-    <div>
-      <%= link_to "request", bookings_path, class: "btn-purple-header" %>
-    </div>
-    <div class="all-users">
-    <% @users.each do |user| %>
-
-      <% if user.plant_sitter == true %>
-        <div class="user_card">
-
-          <div class="user_card_info">
-            <%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %>
-            <p>postal code: <%= user.postal_code %></p>
-          </div>
-
-          <div class="user_card_action">
-            <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="">
-            <div>
-              <%= link_to "learn more", user_path(user), class: "btn-purple" %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-    </div>
+    <div class="container">
+      <h1>Plant Sitters in your area</h1>
+      <div class="all-users">
+        <% @users.each do |user| %>
+          <% if user.plant_sitter == true %>
+            <%= render 'user_card', {user: user} %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </section>

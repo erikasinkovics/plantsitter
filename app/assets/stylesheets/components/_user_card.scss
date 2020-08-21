@@ -1,38 +1,27 @@
 .user_card {
   display: flex;
-  justify-content: space-evenly;
-  width: 500px;
+  justify-content: space-between;
   border: 5px solid #144938;
-  height: 200px;
-  margin: 30px;
-  margin-left: 300px;
+  padding: 20px;
+  height: 180px;
+  max-width: 400px;
+  margin: 15px auto;
   // position: absolute;
   border-radius: 25px;
+  background: rgba(255, 255, 255, 1);
 }
 
 .user_card_info {
-
-border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .user_card_action {
   img{
     border-radius: 50%;
-    width: 100px;
+    width: 130px;
     align-self: center;
   }
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  border: 1px solid yellow;
-}
-// space-between
-
-.container {
-  height: 500px;
-  overflow-y: scroll;
-}
-
-.all-users {
-  margin-top: 90px;
 }
