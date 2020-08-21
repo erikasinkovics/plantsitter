@@ -13,11 +13,15 @@
     <% elsif @booking.status == false %>
       <p>Booking status: Rejected</p>
     <% else %>
-      <p><strong>  Booking status:</strong>  <strong> <em> Pending.</em></strong> Once the booking is approved by your plant sitter, you will recieve a notification by email!</p>
+      <p><strong>  Booking status:</strong>  <strong> <em> Pending.</em></strong> Once the booking is approved by your plant sitter, you will receive a notification by email!</p>
     <% end %>
     <br>
     <div>
       <%= link_to "Go back to my bookings", bookings_path, class: "btn-purple" %>
+    </div>
+    <br>
+    <div>
+      <%= link_to "Go back to plantsitters", users_path, class: "btn-purple" %>
     </div>
     <br>
 </div>
