@@ -1,0 +1,48 @@
+  <% if current_user.plant_sitter? %>
+    <div class="card-product">
+      <%= cl_image_tag booking.customer.photo.key,
+      crop: :thumb, gravity: :face %>
+      <div class="card-product-infos">
+        <div>
+          <h2><%= "#{booking.customer.first_name} #{booking.customer.last_name}" %></h2>
+          <p> <%= "#{booking.start_date} - #{booking.end_date}" %></p>
+          <% if booking.status == true %>
+            <p>Approved</p>
+          <% elsif booking.status == false %>
+            <p>Rejected</p>
+          <% else %>
+            <p>Pending</p>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to 'Approve', approve_path(id: booking.id), method: :patch, class: "btn btn-ghost" %>
+          <%= link_to 'Reject', reject_path(id: booking.id), method: :patch, class: "btn btn-ghost" %>
+          <%= link_to 'Booking details', booking_path(booking) %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <div class="card-product">
+      <%= cl_image_tag booking.plant_sitter.photo.key,
+      crop: :thumb, gravity: :face %>
+
+      <div class="card-product-infos">
+        <div>
+          <h2><%= "#{booking.plant_sitter.first_name} #{booking.plant_sitter.last_name}" %></h2>
+          <p> <%= "#{booking.start_date} - #{booking.end_date}" %></p>
+
+          <% if booking.status == true %>
+            <p>Approved</p>
+          <% elsif booking.status == false %>
+            <p>Rejected</p>
+          <% else %>
+            <p>Pending</p>
+          <% end %>
+        </div>
+
+        <div>
+          <%= link_to 'Booking details', booking_path(booking) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
