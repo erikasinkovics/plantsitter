@@ -18,9 +18,9 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
-    # @bookings.each do |booking|
-    #   booking.status = true
-    # end
+    @bookings.each do |booking|
+      booking.status
+    end
   end
 
   def show
