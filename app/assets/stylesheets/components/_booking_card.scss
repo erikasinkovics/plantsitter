@@ -7,6 +7,7 @@
   align-items: center;
   margin-bottom: 10px;
   width: 100%;
+  opacity: 0.85;
 }
 
 .card-product img {
@@ -16,13 +17,13 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -53,4 +54,7 @@
 
 .btn-ghost:hover {
   opacity: 1;
+  
+a {
+  color: #A5409F;
 }
