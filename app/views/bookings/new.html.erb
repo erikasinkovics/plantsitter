@@ -1,11 +1,16 @@
 <h1>Confirm booking details</h1>
+<div class="user-show-card">
+  <p>Your plantsitter is <strong><%= @plant_sitter.first_name %> <%= @plant_sitter.last_name %></strong></p>
 
-<p>Your plantsitter is <%= @plant_sitter.first_name %> <%= @plant_sitter.last_name %> </p>
-
-<%= simple_form_for @booking, url: user_bookings_path(@plant_sitter), method: :post do |t| %>
-  <%= t.input :start_date, as: :date %>
-  <%= t.input :end_date, as: :date %>
-  <%= t.button :submit %>
-<% end %>
-
-<a href="/bookings">Go back to bookings</a>
+  <%= simple_form_for @booking, url: user_bookings_path(@plant_sitter), method: :post do |t| %>
+    <%= t.input :start_date, as: :date %>
+    <%= t.input :end_date, as: :date %>
+    <div class="btn-purple"><%= t.button :submit %></div>
+  <% end %>
+  <br>
+  <!-- <a href="/bookings">Go back to bookings</a> -->
+  <div>
+    <%= link_to "Go back to plantsitters", users_path, class: "btn-purple" %>
+  </div>
+  <br>
+</div>
